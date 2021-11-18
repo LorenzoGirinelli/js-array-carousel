@@ -13,8 +13,6 @@
 .slider {
     width: 70%;
     height: 50%;
-    /* test */
-    background-color: brown;
     display: flex;
 }
 .main-image-container{

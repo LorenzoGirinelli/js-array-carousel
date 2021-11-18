@@ -22,6 +22,7 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 const mainImagesContainer = document.querySelector('.main-image-container');
+// inserisco i single-image all' interno dell' html
 for( let i = 0; i < items.length; i++ ) {
     const thisPath = items[i];
     const thisTitle = title[i];
@@ -30,7 +31,7 @@ for( let i = 0; i < items.length; i++ ) {
     console.log(thisPath);
 
     const newImageDiv = `
-    <div class="single-image active">
+    <div class="single-image">
         <img src="${thisPath}" alt="">
 
         <div class="single-image-text">
@@ -42,4 +43,20 @@ for( let i = 0; i < items.length; i++ ) {
     
 
     mainImagesContainer.innerHTML += newImageDiv;
+}
+
+const singleImages = document.getElementsByClassName('single-image');
+singleImages[0].classList.add('active');
+
+// thumbs
+const thumbs = document.querySelector('.thumbs')
+for( let i = 0; i < items.length; i++ ) {
+    const thisPath = items[i];
+    const newThumbDiv = `
+    <div class="single-thumb">
+        <img src="${thisPath}" alt="">
+    </div>
+    `;
+
+    thumbs.innerHTML += newThumbDiv;
 }
